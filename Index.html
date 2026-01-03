@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<style>
+body{
+  margin: 0px;
+  padding: 0px
+}
+h1{
+  align-content: center;
+  background-color: ;
+  margin: 5%;
+  background-size: center;
+}
+.al{
+  background-color: ;
+  box-shadow: 0px 0px 2px 1.5px;
+  border-radius: 5px;
+  margin: 10%; 
+  margin-top: 30%;
+  position: fixed;
+}
+.form{
+  border: 2px solid;
+  margin: 10%;
+  height: 30%;
+  padding: 2px;
+  
+}
+input{
+  width: 95%;
+  text-decoration: none;
+  gap: 3px;
+  margin: 2%;
+  font-size: 9opx;
+  border-radius: 5px;
+}
+button{
+  padding-bottom: 3px;
+  bottom: 5px;
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
+  justify-items: center;
+  margin: 14px;
+  width: 92%;
+}
+paragraphy{
+  margin: 10px;
+  display: flex;
+  padding: 2px;
+}
+a{
+  padding-left: 30px;
+  font-size: 20px;
+  color: blue;
+}
+h1 span:hover{
+  background-color: white;
+  color: blue;
+}
+
+</style>
+<body>
+  <div class="al">
+<h1><span>registration</span> form</h1>
+   
+    <form action="">
+      <input type="text" placeholder="enter name
+      " id="name">
+      <input type="email" placeholder="enter email
+      " id="email">
+      <input type="password"  placeholder="enter password" id="pass">
+      <button type="submit" onclick="form()">send</button>
+      <paragraphy>you have an account? <a href="Login.html">Login</a></paragraphy>
+    </form>
+  </div>
+   <script>
+    function form(){
+    return new promise((resolve,reject) => {
+        const name=document.getElementById('name').value;
+        const email=document.getElementById("email").value;
+        const pass=document.getElementById("password").value;
+        if(name && email && pass){
+          setTimeout(()=>{
+            resolve({name,email,pass})
+          },1000)
+        }
+        else{
+          reject("fill all field");
+        }
+      })
+    }
+    
+    function handleform(event){
+      event.preventDefault();
+      
+      
+      hello()
+      .then(data=>{
+        document.getElementById('result').innerHTML=`hello mr/miss ${data.name}
+        <br> Email:${data.email} <br> password:${data.pass}`;
+      })
+      .catch(error=>{
+        document.getElementById('result').innerHTML='something went wrong';
+      })
+   document.getElementById('myForm').addEventListener('submit', handleform);
+    }
+    </script>
+</body>
+</html>
+
